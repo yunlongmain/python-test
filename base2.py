@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 
 dic = {'a': 1, 'b': "abc"}
 print(dic, type(dic))
@@ -26,15 +26,4 @@ for line in f:
     print line
 f.close()
 
-
-re = map((lambda x,y: x+y),[1,2,3],[6,7,9])
-print(re)
-
-
-def func(a):
-    if a > 100:
-        return True
-    else:
-        return False
-
-print filter(func,[10,56,101,500])
+import this

@@ -10,9 +10,16 @@ class chicken(bird):
 
 summer = chicken(2)
 
+print("-----test dict and dir-------")
 print(bird.__dict__)
+print(dir(bird))
+
 print(chicken.__dict__)
+print(dir(chicken))
+
 print(summer.__dict__)
+print(dir(summer))
+print("-----------------------------")
 
 
 class num(object):
@@ -33,3 +40,32 @@ x.neg = -22
 print(x.value)
 print(num.neg.__doc__)
 del x.neg
+
+class bird(object):
+    feather = True
+
+class chicken(bird):
+    fly = False
+    def __init__(self, age):
+        self.age = age
+    def __getattr__(self, name):
+        if name == 'adult':
+            if self.age > 1.0: return True
+            else: return False
+        else: raise AttributeError(name)
+
+summer = chicken(2)
+
+print(summer.adult)
+summer.age = 0.5
+print(summer.adult)
+
+b = bird()
+
+# print(summer.male)
+
+print(bird.__bases__)
+print(dict.__bases__)
+
+print(repr(chicken))
+print(repr(summer))

@@ -8,3 +8,5 @@ print(os.sys.path)
 # print testModule.tt("b")
 from testModule import tt  # from testModule import *
 print tt("b")
+
+import imported
